@@ -13,13 +13,9 @@ def summary(a):
     final = 0
     with concurrent.futures.ProcessPoolExecutor(max_workers=5) as executor:
         wait_complete = []
-        # проходимся по списку с данными для обработки
         for task in a:
             row = 0
-            # запускаем worker() для каждого элемента данных
             executor.submit(worker, task)
-            # в список складываем объекты 'future'
-            # с будущими результатами
             # Здесь task - строка матрицы
             wait_complete.append(task)
             for i in task:
