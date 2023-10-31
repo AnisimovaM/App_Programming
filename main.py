@@ -5,7 +5,7 @@ import multiprocessing
 def worker(n):
     core_name = multiprocessing.current_process().name
     print(f'{core_name}: обработка данных => {n}')
-    print(f'{core_name}: обработка закончена => {n}')
+    #print(f'{core_name}: обработка закончена => {n}')
 
 
 def summary(a):
